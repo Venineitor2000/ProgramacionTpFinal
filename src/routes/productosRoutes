@@ -1,0 +1,11 @@
+var express = require("express");
+var productoController = { GetAllProductos, GetOneProducto, CreateOneProducto, UpdateOneProducto, DeleteOneProducto } = require("../controllers/productoController");
+var router = express.Router();
+
+router.get("/",productoController.GetAllProductos)
+.get("/:productoId",productoController.GetOneProducto)
+.post("/",productoController.CreateOneProducto)
+.patch("/:productoId",productoController.UpdateOneProducto)
+.delete("/:productoId",productoController.DeleteOneProducto);
+
+module.exports = router;
